@@ -26,57 +26,88 @@ Partial Class Form1
         picRadar = New PictureBox()
         radarTimer = New Timer(components)
         Panel1 = New Panel()
-        radNone = New RadioButton()
-        radNoise = New RadioButton()
-        radDeception = New RadioButton()
-        GroupBox1 = New GroupBox()
-        tkbJammerPower = New TrackBar()
+        TableLayoutPanel2 = New TableLayoutPanel()
         GroupBox2 = New GroupBox()
+        tkbJammerPower = New TrackBar()
+        GroupBox1 = New GroupBox()
+        radDeception = New RadioButton()
+        radNoise = New RadioButton()
+        radNone = New RadioButton()
+        TableLayoutPanel1 = New TableLayoutPanel()
         CType(picRadar, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
-        GroupBox1.SuspendLayout()
-        CType(tkbJammerPower, ComponentModel.ISupportInitialize).BeginInit()
+        TableLayoutPanel2.SuspendLayout()
         GroupBox2.SuspendLayout()
+        CType(tkbJammerPower, ComponentModel.ISupportInitialize).BeginInit()
+        GroupBox1.SuspendLayout()
+        TableLayoutPanel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' picRadar
         ' 
-        picRadar.Location = New Point(137, 90)
+        picRadar.Dock = DockStyle.Fill
+        picRadar.Location = New Point(3, 3)
         picRadar.Name = "picRadar"
-        picRadar.Size = New Size(331, 268)
+        picRadar.Size = New Size(438, 255)
         picRadar.TabIndex = 0
         picRadar.TabStop = False
         ' 
         ' Panel1
         ' 
-        Panel1.Controls.Add(GroupBox2)
-        Panel1.Controls.Add(GroupBox1)
-        Panel1.Location = New Point(514, 90)
+        Panel1.Controls.Add(TableLayoutPanel2)
+        Panel1.Dock = DockStyle.Fill
+        Panel1.Location = New Point(447, 3)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(274, 268)
+        Panel1.Size = New Size(234, 255)
         Panel1.TabIndex = 1
         ' 
-        ' radNone
+        ' TableLayoutPanel2
         ' 
-        radNone.AutoSize = True
-        radNone.Location = New Point(6, 18)
-        radNone.Name = "radNone"
-        radNone.Size = New Size(54, 19)
-        radNone.TabIndex = 0
-        radNone.TabStop = True
-        radNone.Text = "None"
-        radNone.UseVisualStyleBackColor = True
+        TableLayoutPanel2.ColumnCount = 1
+        TableLayoutPanel2.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
+        TableLayoutPanel2.Controls.Add(GroupBox2, 0, 1)
+        TableLayoutPanel2.Controls.Add(GroupBox1, 0, 0)
+        TableLayoutPanel2.Dock = DockStyle.Fill
+        TableLayoutPanel2.Location = New Point(0, 0)
+        TableLayoutPanel2.Name = "TableLayoutPanel2"
+        TableLayoutPanel2.RowCount = 2
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
+        TableLayoutPanel2.Size = New Size(234, 255)
+        TableLayoutPanel2.TabIndex = 5
         ' 
-        ' radNoise
+        ' GroupBox2
         ' 
-        radNoise.AutoSize = True
-        radNoise.Location = New Point(6, 43)
-        radNoise.Name = "radNoise"
-        radNoise.Size = New Size(158, 19)
-        radNoise.TabIndex = 1
-        radNoise.TabStop = True
-        radNoise.Text = "Noise Jamming (Barrage)"
-        radNoise.UseVisualStyleBackColor = True
+        GroupBox2.Controls.Add(tkbJammerPower)
+        GroupBox2.Dock = DockStyle.Fill
+        GroupBox2.Location = New Point(3, 130)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(228, 122)
+        GroupBox2.TabIndex = 4
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "Jammer Power"
+        ' 
+        ' tkbJammerPower
+        ' 
+        tkbJammerPower.Dock = DockStyle.Fill
+        tkbJammerPower.Location = New Point(3, 19)
+        tkbJammerPower.Name = "tkbJammerPower"
+        tkbJammerPower.Size = New Size(222, 100)
+        tkbJammerPower.TabIndex = 3
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Controls.Add(radDeception)
+        GroupBox1.Controls.Add(radNoise)
+        GroupBox1.Controls.Add(radNone)
+        GroupBox1.Dock = DockStyle.Fill
+        GroupBox1.Location = New Point(3, 3)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(228, 121)
+        GroupBox1.TabIndex = 3
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "Jammer Mode"
         ' 
         ' radDeception
         ' 
@@ -89,51 +120,61 @@ Partial Class Form1
         radDeception.Text = "Deception Jamming (False Targets)"
         radDeception.UseVisualStyleBackColor = True
         ' 
-        ' GroupBox1
+        ' radNoise
         ' 
-        GroupBox1.Controls.Add(radDeception)
-        GroupBox1.Controls.Add(radNoise)
-        GroupBox1.Controls.Add(radNone)
-        GroupBox1.Location = New Point(3, 3)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(268, 100)
-        GroupBox1.TabIndex = 3
-        GroupBox1.TabStop = False
-        GroupBox1.Text = "Jammer Mode"
+        radNoise.AutoSize = True
+        radNoise.Location = New Point(6, 43)
+        radNoise.Name = "radNoise"
+        radNoise.Size = New Size(158, 19)
+        radNoise.TabIndex = 1
+        radNoise.TabStop = True
+        radNoise.Text = "Noise Jamming (Barrage)"
+        radNoise.UseVisualStyleBackColor = True
         ' 
-        ' tkbJammerPower
+        ' radNone
         ' 
-        tkbJammerPower.Location = New Point(6, 17)
-        tkbJammerPower.Name = "tkbJammerPower"
-        tkbJammerPower.Size = New Size(256, 45)
-        tkbJammerPower.TabIndex = 3
+        radNone.AutoSize = True
+        radNone.Location = New Point(6, 18)
+        radNone.Name = "radNone"
+        radNone.Size = New Size(54, 19)
+        radNone.TabIndex = 0
+        radNone.TabStop = True
+        radNone.Text = "None"
+        radNone.UseVisualStyleBackColor = True
         ' 
-        ' GroupBox2
+        ' TableLayoutPanel1
         ' 
-        GroupBox2.Controls.Add(tkbJammerPower)
-        GroupBox2.Location = New Point(3, 109)
-        GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(268, 68)
-        GroupBox2.TabIndex = 4
-        GroupBox2.TabStop = False
-        GroupBox2.Text = "Jammer Power"
+        TableLayoutPanel1.ColumnCount = 2
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 65F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 35F))
+        TableLayoutPanel1.Controls.Add(picRadar, 0, 0)
+        TableLayoutPanel1.Controls.Add(Panel1, 1, 0)
+        TableLayoutPanel1.Dock = DockStyle.Fill
+        TableLayoutPanel1.Location = New Point(0, 0)
+        TableLayoutPanel1.Name = "TableLayoutPanel1"
+        TableLayoutPanel1.RowCount = 1
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.Size = New Size(684, 261)
+        TableLayoutPanel1.TabIndex = 2
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
-        Controls.Add(Panel1)
-        Controls.Add(picRadar)
+        ClientSize = New Size(684, 261)
+        Controls.Add(TableLayoutPanel1)
+        MinimumSize = New Size(700, 300)
         Name = "Form1"
-        Text = "Form1"
+        Text = "Goofy Jammer"
         CType(picRadar, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
-        GroupBox1.ResumeLayout(False)
-        GroupBox1.PerformLayout()
-        CType(tkbJammerPower, ComponentModel.ISupportInitialize).EndInit()
+        TableLayoutPanel2.ResumeLayout(False)
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
+        CType(tkbJammerPower, ComponentModel.ISupportInitialize).EndInit()
+        GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
+        TableLayoutPanel1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -146,5 +187,7 @@ Partial Class Form1
     Friend WithEvents radNone As RadioButton
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents tkbJammerPower As TrackBar
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
 
 End Class
